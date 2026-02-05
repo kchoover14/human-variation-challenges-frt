@@ -1,0 +1,127 @@
+race,gender,age,accuracy,mean_similarity,std_similarity,n_pairs
+Black,Female,0-2,0.525,0.5162,0.193,200
+Black,Female,10-19,0.93,0.4891,0.3059,200
+Black,Female,20-29,0.89,0.4775,0.3139,200
+Black,Female,3-9,0.52,0.517,0.1939,200
+Black,Female,30-39,0.88,0.4887,0.3032,200
+Black,Female,40-49,0.91,0.4853,0.3089,200
+Black,Female,50-59,0.89,0.482,0.3095,200
+Black,Female,60-69,0.515,0.5016,0.1983,200
+Black,Female,70+,0.5,0.5076,0.1859,200
+Black,Male,0-2,0.52,0.5106,0.1923,200
+Black,Male,10-19,0.915,0.472,0.3179,200
+Black,Male,20-29,1.0,0.5305,0.3577,200
+Black,Male,3-9,0.525,0.5049,0.2026,200
+Black,Male,30-39,1.0,0.5303,0.3596,200
+Black,Male,40-49,1.0,0.5378,0.35,200
+Black,Male,50-59,1.0,0.5379,0.3567,200
+Black,Male,60-69,0.52,0.4972,0.1992,200
+Black,Male,70+,0.52,0.5077,0.1964,200
+East Asian,Female,0-2,0.91,0.4877,0.3114,200
+East Asian,Female,10-19,1.0,0.5316,0.3612,200
+East Asian,Female,20-29,1.0,0.5394,0.3523,200
+East Asian,Female,3-9,0.91,0.4806,0.3132,200
+East Asian,Female,30-39,1.0,0.5353,0.3588,200
+East Asian,Female,40-49,1.0,0.5375,0.3512,200
+East Asian,Female,50-59,1.0,0.5351,0.352,200
+East Asian,Female,60-69,0.89,0.4904,0.3004,200
+East Asian,Female,70+,0.87,0.4919,0.3021,200
+East Asian,Male,0-2,0.905,0.4774,0.3134,200
+East Asian,Male,10-19,1.0,0.5408,0.348,200
+East Asian,Male,20-29,1.0,0.5361,0.3509,200
+East Asian,Male,3-9,0.91,0.4874,0.3095,200
+East Asian,Male,30-39,1.0,0.5329,0.3585,200
+East Asian,Male,40-49,1.0,0.5277,0.3622,200
+East Asian,Male,50-59,1.0,0.5302,0.3594,200
+East Asian,Male,60-69,0.885,0.4855,0.303,200
+East Asian,Male,70+,0.955,0.4817,0.3214,200
+Indian,Female,0-2,0.52,0.509,0.2007,200
+Indian,Female,10-19,0.91,0.4918,0.305,200
+Indian,Female,20-29,1.0,0.533,0.3539,200
+Indian,Female,3-9,0.53,0.4988,0.2078,200
+Indian,Female,30-39,1.0,0.5407,0.3531,200
+Indian,Female,40-49,1.0,0.5403,0.3513,200
+Indian,Female,50-59,1.0,0.5421,0.3464,200
+Indian,Female,60-69,0.895,0.4845,0.3074,200
+Indian,Female,70+,0.905,0.4894,0.3084,200
+Indian,Male,0-2,0.515,0.4286,0.2619,200
+Indian,Male,10-19,0.875,0.4852,0.3053,200
+Indian,Male,20-29,1.0,0.5316,0.3613,200
+Indian,Male,3-9,0.54,0.4217,0.2715,200
+Indian,Male,30-39,1.0,0.5279,0.3612,200
+Indian,Male,40-49,1.0,0.5269,0.3592,200
+Indian,Male,50-59,1.0,0.5408,0.3495,200
+Indian,Male,60-69,0.9,0.4885,0.3051,200
+Indian,Male,70+,0.915,0.4842,0.3093,200
+Latino_Hispanic,Female,0-2,0.53,0.4863,0.2138,200
+Latino_Hispanic,Female,10-19,0.87,0.478,0.3112,200
+Latino_Hispanic,Female,20-29,1.0,0.5303,0.3673,200
+Latino_Hispanic,Female,3-9,0.52,0.5043,0.1946,200
+Latino_Hispanic,Female,30-39,1.0,0.5309,0.3613,200
+Latino_Hispanic,Female,40-49,1.0,0.5347,0.3521,200
+Latino_Hispanic,Female,50-59,1.0,0.5288,0.356,200
+Latino_Hispanic,Female,60-69,0.925,0.4874,0.3108,200
+Latino_Hispanic,Female,70+,0.86,0.4787,0.3072,200
+Latino_Hispanic,Male,0-2,0.53,0.4361,0.2557,200
+Latino_Hispanic,Male,10-19,0.895,0.4871,0.3058,200
+Latino_Hispanic,Male,20-29,1.0,0.5335,0.355,200
+Latino_Hispanic,Male,3-9,0.525,0.4379,0.2531,200
+Latino_Hispanic,Male,30-39,1.0,0.527,0.362,200
+Latino_Hispanic,Male,40-49,1.0,0.5259,0.3604,200
+Latino_Hispanic,Male,50-59,1.0,0.53,0.3607,200
+Latino_Hispanic,Male,60-69,0.895,0.4874,0.306,200
+Latino_Hispanic,Male,70+,0.87,0.484,0.3112,200
+Middle Eastern,Female,0-2,0.53,0.513,0.1917,200
+Middle Eastern,Female,10-19,0.905,0.4935,0.297,200
+Middle Eastern,Female,20-29,1.0,0.5265,0.3603,200
+Middle Eastern,Female,3-9,0.525,0.5102,0.1922,200
+Middle Eastern,Female,30-39,1.0,0.5376,0.3564,200
+Middle Eastern,Female,40-49,1.0,0.5392,0.3489,200
+Middle Eastern,Female,50-59,1.0,0.5352,0.3544,200
+Middle Eastern,Female,60-69,0.9,0.479,0.3101,200
+Middle Eastern,Female,70+,0.9,0.482,0.3133,200
+Middle Eastern,Male,0-2,0.515,0.4291,0.2654,200
+Middle Eastern,Male,10-19,0.895,0.4918,0.2983,200
+Middle Eastern,Male,20-29,1.0,0.5304,0.3591,200
+Middle Eastern,Male,3-9,0.54,0.436,0.2521,200
+Middle Eastern,Male,30-39,1.0,0.5301,0.3595,200
+Middle Eastern,Male,40-49,1.0,0.5385,0.3508,200
+Middle Eastern,Male,50-59,1.0,0.5324,0.3576,200
+Middle Eastern,Male,60-69,0.905,0.4812,0.3178,200
+Middle Eastern,Male,70+,0.905,0.4832,0.3083,200
+Southeast Asian,Female,0-2,0.53,0.5189,0.1949,200
+Southeast Asian,Female,10-19,0.915,0.4816,0.3083,200
+Southeast Asian,Female,20-29,1.0,0.5309,0.356,200
+Southeast Asian,Female,3-9,0.53,0.5126,0.1992,200
+Southeast Asian,Female,30-39,1.0,0.5313,0.3502,200
+Southeast Asian,Female,40-49,1.0,0.5311,0.3618,200
+Southeast Asian,Female,50-59,1.0,0.5332,0.3521,200
+Southeast Asian,Female,60-69,0.895,0.492,0.3058,200
+Southeast Asian,Female,70+,0.92,0.4905,0.3059,200
+Southeast Asian,Male,0-2,0.525,0.4337,0.2581,200
+Southeast Asian,Male,10-19,0.925,0.4884,0.3116,200
+Southeast Asian,Male,20-29,1.0,0.539,0.3516,200
+Southeast Asian,Male,3-9,0.525,0.4339,0.2583,200
+Southeast Asian,Male,30-39,1.0,0.5305,0.3584,200
+Southeast Asian,Male,40-49,1.0,0.5306,0.3554,200
+Southeast Asian,Male,50-59,1.0,0.5254,0.3609,200
+Southeast Asian,Male,60-69,0.88,0.4747,0.3145,200
+Southeast Asian,Male,70+,0.9,0.4807,0.3093,200
+White,Female,0-2,0.91,0.4898,0.3101,200
+White,Female,10-19,1.0,0.5423,0.3508,200
+White,Female,20-29,1.0,0.5449,0.3442,200
+White,Female,3-9,0.905,0.4919,0.3022,200
+White,Female,30-39,1.0,0.534,0.3536,200
+White,Female,40-49,1.0,0.5401,0.3541,200
+White,Female,50-59,1.0,0.5313,0.3601,200
+White,Female,60-69,0.895,0.4876,0.3096,200
+White,Female,70+,0.9,0.4817,0.3051,200
+White,Male,0-2,0.91,0.4796,0.3108,200
+White,Male,10-19,1.0,0.5285,0.3632,200
+White,Male,20-29,1.0,0.5259,0.3581,200
+White,Male,3-9,0.905,0.4853,0.2998,200
+White,Male,30-39,1.0,0.5462,0.3466,200
+White,Male,40-49,0.995,0.5297,0.3561,200
+White,Male,50-59,1.0,0.5396,0.3498,200
+White,Male,60-69,0.9,0.4822,0.3109,200
+White,Male,70+,0.875,0.4763,0.3082,200
