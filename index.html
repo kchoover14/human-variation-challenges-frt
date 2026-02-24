@@ -63,7 +63,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
   <li><a href="#study-design" id="toc-study-design" class="nav-link" data-scroll-target="#study-design">Study Design</a></li>
-  <li><a href="#data-code" id="toc-data-code" class="nav-link" data-scroll-target="#data-code">Data &amp; Code</a></li>
+  <li><a href="#project-resources" id="toc-project-resources" class="nav-link" data-scroll-target="#project-resources">Project Resources</a></li>
   <li><a href="#tools-technologies" id="toc-tools-technologies" class="nav-link" data-scroll-target="#tools-technologies">Tools &amp; Technologies</a></li>
   <li><a href="#expertise" id="toc-expertise" class="nav-link" data-scroll-target="#expertise">Expertise</a></li>
   </ul>
@@ -111,9 +111,10 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="executive-summary" class="level2">
 <h2 class="anchored" data-anchor-id="executive-summary">Executive Summary</h2>
-<p><strong>Problem:</strong> Facial recognition technology (FRT) is widely deployed in high-stakes government systems – border control, law enforcement, identity verification. But FRT performance is not uniform across demographic groups. Training datasets for leading models systematically underrepresent Black faces, children, and elderly individuals, which has direct implications for civil liberties and equal treatment. As a biological anthropologist who has spent a career working with biometrics across populations, I wanted to understand how biometric systems achieve NIST-level accuracy claims – and whether they suffer from the same categorical problems that plague forensic anthropology, where race is culturally constructed, biological variation within populations exceeds variation between them, and most identifications fall below legal evidentiary thresholds.</p>
-<p><strong>Approach:</strong> I approximated NIST-style demographic fairness testing using FaceNet (ResNet-based, trained on VGGFace2) for 1:1 face verification across 25,200 comparison pairs spanning 126 demographic groups (7 races × 2 genders × 9 age groups). A decision threshold of 0.75 (high-security government setting) was applied. Due to Python 3.13 compatibility issues with biometric libraries (FairFace, LFW), synthetic data was generated to model documented NIST FRVT performance patterns rather than use real biometric datasets. Analysis was conducted locally in Jupyter Notebook.</p>
-<p><strong>Implications:</strong> The system produces a 25% overall false rejection rate – one in four legitimate people incorrectly rejected. Taking air travel as an example and at a threshold appropriate for high-security government use, this translates to an estimated 254,300 incorrect rejections per million passengers, 42,383 hours of additional processing, and approximately $2.1M in additional labor costs. Critically, this burden falls disproportionately on Black passengers (especially children and elderly), travelers with young children of any race, and elderly passengers of all backgrounds – a finding with direct civil rights implications for disparate treatment based on race and age. <em>Note: this analysis uses FaceNet with synthetic data to approximate NIST-style testing – not the advanced CNNs deployed in operational government systems. The disparity patterns reflect documented real-world biases and the methodological framework is production-quality, but the specific metrics should be interpreted in that context.</em></p>
+<p><strong>Problem:</strong> Facial recognition technology (FRT) is widely deployed in high-stakes government systems – border control, law enforcement, identity verification. But FRT performance is not uniform across demographic groups. Training datasets for leading models systematically underrepresent Black faces, children, and elderly individuals, which has direct implications for civil liberties and equal treatment. As a biological anthropologist who has spent a career working with biometrics across populations, I wanted to understand how biometric systems achieve <a href="https://pages.nist.gov/frvt/html/frvt11.html">NIST FRVT</a>-level accuracy claims – and whether they suffer from the same categorical problems that plague forensic anthropology, where race is culturally constructed, biological variation within populations exceeds variation between them, and most identifications fall below legal evidentiary thresholds.</p>
+<p><strong>Approach:</strong> I approximated NIST-style demographic fairness testing using FaceNet (ResNet-based, trained on <a href="https://www.robots.ox.ac.uk/~vgg/data/vgg_face2/">VGGFace2</a>) for 1:1 face verification across 25,200 comparison pairs spanning 126 demographic groups (7 races × 2 genders × 9 age groups). A decision threshold of 0.75 (high-security government setting) was applied. Due to Python 3.13 compatibility issues with biometric libraries (FairFace, LFW), synthetic data was generated to model documented NIST FRVT performance patterns rather than use real biometric datasets. Analysis was conducted locally in Jupyter Notebook.</p>
+<p><strong>Insights:</strong> The system produces a 25% overall false rejection rate – one in four legitimate people incorrectly rejected. Taking air travel as an example and at a threshold appropriate for high-security government use, this translates to an estimated 254,300 incorrect rejections per million passengers, 42,383 hours of additional processing, and approximately $2.1M in additional labor costs. Critically, this burden falls disproportionately on Black passengers (especially children and elderly), travelers with young children of any race, and elderly passengers of all backgrounds – a finding with direct civil rights implications for disparate treatment based on race and age. <em>Note: this analysis uses FaceNet with synthetic data to approximate NIST-style testing – not the advanced CNNs deployed in operational government systems. The disparity patterns reflect documented real-world biases and the methodological framework is production-quality, but the specific metrics should be interpreted in that context.</em></p>
+<p><strong>Significance:</strong> Seemingly neutral technical decisions – training data composition and single-threshold deployment – produce systematically inequitable outcomes when FRT is deployed in high-stakes government contexts. The same demographic groups that face historical disadvantage in civil and legal systems are the groups most likely to be incorrectly rejected by biometric systems trained on data that does not represent them. This is not an edge case or an implementation failure – it is an architectural consequence of how these systems are built and validated. Equitable deployment requires demographic fairness audits, diverse training data, and age-specific decision thresholds as procurement standards, not afterthoughts.</p>
 <p><strong>Key Findings</strong></p>
 <ul>
 <li>Overall accuracy: 87.29%; False Match Rate: 0.00%; False Non-Match Rate: 25.43%</li>
@@ -145,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="research-question" class="level2">
 <h2 class="anchored" data-anchor-id="research-question">Research Question</h2>
-<p>Does a state-of-the-art face recognition model (FaceNet) show performance disparities across race, gender, and age – and what are the civil liberties implications of deploying such a system in high-stakes government contexts?</p>
+<p>Does a state-of-the-art face recognition model (FaceNet) show performance disparities across race, gender, and age?</p>
 <hr>
 </section>
 <section id="research-answers" class="level2">
@@ -153,14 +154,14 @@ ul.task-list li input[type="checkbox"] {
 <section id="racial-bias-is-visible-across-all-age-groups" class="level3">
 <h3 class="anchored" data-anchor-id="racial-bias-is-visible-across-all-age-groups">Racial Bias is Visible Across All Age Groups</h3>
 <p>The accuracy heat map by race and age shows clear horizontal banding – age effects dominate, with youngest (0–9) and oldest (60+) groups showing the lowest accuracy. But within each age band, racial disparities are consistent: children who are not White or East Asian show accuracy around 52%, and older Black adults (60+) show accuracy of 51–53%. For prime adults (20–50), accuracy reaches 99%+ across most racial groups, but Black individuals show systematically lower performance (~94.5%) compared to White and East Asian individuals (~100%).</p>
-<p><em>Figure 1. Accuracy by race and age group.</em></p>
+<p><strong>Figure 1. Accuracy by race and age group.</strong></p>
 <p><img src="accuracy_by_race_age.png" class="img-fluid"></p>
 <p><strong>Interpretation</strong>: Age and race create compounding disadvantages rather than independent effects. The horizontal banding shows that age drives the largest accuracy drops, but the within-band racial gradient reveals that training data underrepresentation amplifies those drops for already-disadvantaged groups. A Black child or elderly Black individual does not simply face one bias – they face both simultaneously, producing accuracy at the level of random chance.</p>
 </section>
 <section id="black-individuals-show-the-largest-gender-gap" class="level3">
 <h3 class="anchored" data-anchor-id="black-individuals-show-the-largest-gender-gap">Black Individuals Show the Largest Gender Gap</h3>
 <p>Using binary gender classification, differences between male and female are minimal across most racial groups. The exception is Black individuals, where females show 73% accuracy compared to 78% for males – a 5-point gap that is the largest of any racial category and nearly double the next largest disparity.</p>
-<p><em>Figure 2. Accuracy by race and gender.</em></p>
+<p><strong>Figure 2. Accuracy by race and gender.</strong></p>
 <p><img src="accuracy_by_race_gender.png" class="img-fluid"></p>
 <p><strong>Interpretation</strong>: The minimal gender gap across most racial groups suggests that binary sex classification is not the primary driver of disparity in this model – race and age are. The exception is Black individuals, where the 5-point female penalty is large enough to be operationally meaningful. A system that appears gender-neutral in aggregate conceals a race-specific gender penalty that would disproportionately affect Black women in deployment.</p>
 </section>
@@ -173,13 +174,14 @@ ul.task-list li input[type="checkbox"] {
 <section id="human-variation-creates-fundamental-categorical-challenges" class="level3">
 <h3 class="anchored" data-anchor-id="human-variation-creates-fundamental-categorical-challenges">Human Variation Creates Fundamental Categorical Challenges</h3>
 <p>Two broader issues cut across all demographic categories. First, race is culturally constructed and varies cross-culturally. More genetic variation exists within racial groups than between them, yet biometric systems rely on supervised training where humans labeled race onto faces – introducing a system biased toward cultural categorizations. The US Census timeline illustrates how unstable these categories are and tend to be driven by cultural changes over time. The calendar shows that race was a very simple concept for the first census. Additional categories were created over time, such as the recognition of formerly enslaved peoples appearing as a new category, new cultural understandings of race being widely adopted (e.g., white not Hispanic/white Hispanic, Asian and Pacific Islander splitting into sub-categories), or changing labels (e.g., Negro, African-American, Black).</p>
-<p><em>Figure 3. Evolution of US Census racial categories, 1790–present.</em> <img src="census.png" class="img-fluid" alt="US Census Timeline: Race Categories"></p>
+<p><strong>Figure 3. Evolution of US Census racial categories, 1790–present.</strong></p>
+<p><img src="census.png" class="img-fluid"></p>
 <p><strong>Interpretation</strong>: The instability of racial categories over two centuries of US Census data illustrates why supervised learning on human-labeled race is problematic. The labels themselves reflect the cultural moment in which they were assigned, not a stable biological reality. A model trained on faces labeled under one cultural framework will perform poorly on faces that would have been labeled differently under another – or that fall outside any of the available categories entirely.</p>
 <p>Second, binary sex/gender classification is biologically and culturally inadequate. Genetically, sex variants beyond XX and XY exist (XXX, X, XYY); biologically, intersex individuals fall outside the male/female binary; culturally, trans, non-binary, and Two-Spirit individuals are excluded. Parsing male and female is further complicated by the fact that humans are not strongly sexually dimorphic – overlap in facial features, body size, and morphology between males and females is as high as 88%. Biometric systems that assume binary, stable, visually-apparent sex/gender fail for the full spectrum of human diversity, and no performance data exists for non-binary individuals – a technical gap that is simultaneously an ethical failure.</p>
 </section>
 <section id="deployment-cost-of-demographic-bias" class="level3">
 <h3 class="anchored" data-anchor-id="deployment-cost-of-demographic-bias">Deployment Cost of Demographic Bias</h3>
-<p>A 25% overall false rejection rate and 50% false rejection for worst-case demographic groups has concrete operational consequences. Considering FRT at aiports and per million passengers, an estimated 254,300 incorrect rejections would require secondary screening at an average of 10 minutes per review – 42,383 hours of additional processing time and approximately $2.1M in additional labor costs at $50/hour. This burden falls disproportionately on Black passengers (especially children and elderly), travelers with young children of any race, and elderly passengers. The result is a two-tier experience where demographic group membership – not security risk – determines whether a traveler passes through or faces systematic delay and scrutiny. For research and development purposes the framework is production-quality, but this specific configuration would not be deployment-ready.</p>
+<p>A 25% overall false rejection rate and 50% false rejection for worst-case demographic groups has concrete operational consequences. Considering FRT at airports and per million passengers, an estimated 254,300 incorrect rejections would require secondary screening at an average of 10 minutes per review – 42,383 hours of additional processing time and approximately $2.1M in additional labor costs at $50/hour. This burden falls disproportionately on Black passengers (especially children and elderly), travelers with young children of any race, and elderly passengers. The result is a two-tier experience where demographic group membership – not security risk – determines whether a traveler passes through or faces systematic delay and scrutiny. For research and development purposes the framework is production-quality, but this specific configuration would not be deployment-ready.</p>
 <hr>
 </section>
 </section>
@@ -196,18 +198,35 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Code development:</strong> Python code was developed and debugged with Claude Sonnet 4.5 (Anthropic).</p>
 <hr>
 </section>
-<section id="data-code" class="level2">
-<h2 class="anchored" data-anchor-id="data-code">Data &amp; Code</h2>
+<section id="project-resources" class="level2">
+<h2 class="anchored" data-anchor-id="project-resources">Project Resources</h2>
 <p><strong>Repository:</strong> <a href="https://github.com/kchoover14/human-variation-challenges-frt">github.com/kchoover14/human-variation-challenges-frt</a></p>
+<p><strong>Data:</strong> Synthetic data generated to model documented <a href="https://pages.nist.gov/frvt/html/frvt11.html">NIST FRVT</a> performance patterns across 126 demographic groups. No real biometric data used.</p>
+<p><strong>Code:</strong></p>
+<ul>
+<li><code>demographic-bias-analysis.ipynb</code> – full analysis notebook: synthetic data generation, demographic accuracy analysis, visualization</li>
+</ul>
+<p><strong>Project Artifacts:</strong></p>
+<ul>
+<li>Figures (n=3)</li>
+</ul>
+<p><strong>Environment:</strong></p>
+<ul>
+<li><code>requirements.txt</code> – install pinned Python package versions with <code>pip install -r requirements.txt</code></li>
+</ul>
+<p><strong>License:</strong></p>
+<ul>
+<li>Code and scripts © Kara C. Hoover, licensed under the <a href="LICENSE">MIT License</a>.</li>
+<li>Data, figures, and written content © Kara C. Hoover, licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.</li>
+</ul>
 <hr>
 </section>
 <section id="tools-technologies" class="level2">
 <h2 class="anchored" data-anchor-id="tools-technologies">Tools &amp; Technologies</h2>
-<ul>
-<li><strong>Languages:</strong> Python</li>
-<li><strong>Tools:</strong> Jupyter Notebook, GitHub</li>
-<li><strong>Packages:</strong> <code>pandas</code>, <code>numpy</code>, <code>matplotlib</code>, <code>seaborn</code>, <code>scipy</code></li>
-</ul>
+<p><strong>Languages:</strong> Python</p>
+<p><strong>Platform:</strong> Google Colab (Tesla T4 GPU)</p>
+<p><strong>Tools:</strong> Jupyter Notebook | GitHub</p>
+<p><strong>Packages:</strong> pandas | numpy | matplotlib | seaborn</p>
 <hr>
 </section>
 <section id="expertise" class="level2">
