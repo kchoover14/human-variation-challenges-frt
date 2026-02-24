@@ -124,22 +124,14 @@ ul.task-list li input[type="checkbox"] {
 <li>VGGFace2 training data composition drives the pattern: White faces (~60%), East Asian faces (~30%), and adults aged 18–60 (~85%) are heavily overrepresented; Black faces (~5%), Latino/Hispanic (~3%), Middle Eastern (~2%), Indigenous (nearly absent), children (&lt;5%), and elderly (&gt;60, ~10%) are severely underrepresented</li>
 <li>Seemingly neutral technical decisions – training data composition and single-threshold deployment – produce systematically inequitable outcomes</li>
 </ul>
-<div class="callout callout-style-simple callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Policy Recommendations
+<div class="callout-body-container">
+<p><strong>Evidence for Decision-Making</strong> - Require demographic parity audits for training data and application testing before deployment – a single aggregate accuracy figure conceals group-level disparities that constitute disparate treatment - Mandate diverse training datasets as a procurement standard – systems trained on VGGFace2 alone should not be deployed in contexts where accuracy equity across race, age, and gender is required - Apply age-specific thresholds rather than a single decision threshold – the 0.75 threshold appropriate for prime adults is inappropriate for children and elderly individuals whose genuine match similarity scores overlap with impostor distributions - Require secondary review protocols that do not disproportionately burden already-disadvantaged groups when FRT fails – the cost of false rejection should not fall on individuals whose demographic characteristics are artifacts of training data gaps</p>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Require demographic parity audits for training data and application testing before deployment – a single aggregate accuracy figure conceals group-level disparities that constitute disparate treatment</li>
-<li>Mandate diverse training datasets as a procurement standard – systems trained on VGGFace2 alone should not be deployed in contexts where accuracy equity across race, age, and gender is required</li>
-<li>Apply age-specific thresholds rather than a single decision threshold – the 0.75 threshold appropriate for prime adults is inappropriate for children and elderly individuals whose genuine match similarity scores overlap with impostor distributions</li>
-<li>Require secondary review protocols that do not disproportionately burden already-disadvantaged groups when FRT fails – the cost of false rejection should not fall on individuals whose demographic characteristics are artifacts of training data gaps</li>
-</ul>
 </div>
 </div>
 <hr>
